@@ -1,0 +1,14 @@
+# Environment file — never commit real credentials
+.env
+
+# Docker build cache & image tarballs
+*.tar
+
+# Editor / OS metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node modules (if ever added to the repo)
+node_modules/

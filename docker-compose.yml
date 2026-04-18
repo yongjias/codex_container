@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  codex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: codex_container:latest
+    container_name: codex_container
+    # Mount your project directory so Codex can read and modify your code
+    volumes:
+      - ./workspace:/workspace
+    # Pass through the OpenAI API key from your .env file
+    env_file:
+      - .env
+    # Run interactively so you can chat with Codex
+    stdin_open: true
+    tty: true
+    # Override the default command to drop into an interactive Codex session
+    command: []
